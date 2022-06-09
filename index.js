@@ -5,7 +5,6 @@ require('dotenv').config();
 //DB config
 const {dbConnection} = require('./database/config');
 dbConnection();
-console.log(process.env.PORT);
 
 // App de Express
 const app = express();
