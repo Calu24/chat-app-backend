@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 
-const validateJWT = (req, res, next) => {
+const validate = (req, res, next) => {
     next();
     // const token = req.header('x-token');
 
@@ -29,4 +29,4 @@ const validateJWT = (req, res, next) => {
 };
 
 
-module.exports = validateJWT;
+module.exports = validate;
