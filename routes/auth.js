@@ -6,7 +6,7 @@ const { check } = require('express-validator');
 
 const {createUser, login, rebuildToken} = require('../controllers/auth');
 const validateFields = require('../middlewares/validate-fields');
-const validate = require('../middlewares/validate-JWT');
+const validateJWT = require('../middlewares/validate-jwt');
 
 const router = Router();
 
@@ -22,6 +22,6 @@ router.post('/',  [
     check('password', 'password is required').not().isEmpty(),
 ] , login);
 
-router.get('/rebuild', validate, rebuildToken);
+router.get('/rebuild', validateJWT, rebuildToken);
 
 module.exports = router;

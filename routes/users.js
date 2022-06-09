@@ -4,10 +4,10 @@
 const {Router} = require('express');
 const { getUser } = require('../controllers/users');
 
-const validate = require('../middlewares/validate-JWT');
+const validateJWT = require('../middlewares/validate-jwt');
 
 const router = Router();
 
-router.get('/', validate, getUser);
+router.get('/', validateJWT, getUser);
 
 module.exports = router;
